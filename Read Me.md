@@ -22,6 +22,8 @@ Jack Donaghy
 S00268126@atu.ie 
 ------------------------
 
+
+
 Links to:   
 
 Trello Page  
@@ -31,6 +33,7 @@ https://trello.com/invite/b/67a4cd86390df9d4f430ea15/ATTIc86e8a93084d9e1388b6c49
 GitHub Team Page  
 
 max-comp/student-help-buddy 
+
 
  
 
@@ -67,8 +70,10 @@ The "Student Help Buddy" project offers a comprehensive time management tool tha
 such as a student timer, a checklist, and toggle switches for student activities. This solution allows
 students to visually and interactively manage their tasks, ensuring that they stay focused and productive. 
 
-  
 
+
+
+  
 List of Project Requirements   
 
 Student Timer: Interaction, screen, buzzer for notifications.  
@@ -87,22 +92,22 @@ Other Equipment: On/off switch for the overall system.
 
 Initial Design  
 
- 
-
- 
-
- 
-
 Implementation Plan to include equipment needed 
 
 Testing approach – how did you plan your software and hardware
 testing as well as evidence of tests carried out. 
 
-Blynk Cloud has multiple layers of security, it means our network security was already ready
+Blynk Cloud has multiple layers of security, it means our network security was already
+protected sufficiently on the network side.
 Every user should have a valid email address.
-Blynk offers a built-in verification process Each device has its own unique OAuth token and Product ID.
-A combination of both these fields grants access to the device only for your organization 
 
-  
+A explanation from Blynk itself:
+"Blynk offers a built-in verification process Each device has its own unique OAuth token and Product ID.
+A combination of both these fields grants access to the device only for your organization "
 
-Future improvements planned and potential next steps in developing the idea further  
+We also created a rigid enough casing - the design is made easy to assembe and disassemble,
+due to the limitation of only being able to access the arduino yúns code
+
+
+
+Future improvements planned and potential next steps in developing the idea further 
