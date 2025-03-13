@@ -1,0 +1,108 @@
+Student Help Buddy  
+
+ 
+
+Your name(s) & email addresses  
+
+------------------------
+Ewaoluwa Ajani 
+
+S00268840@atu.ie 
+------------------------
+Maksym Batrak 
+
+S00273952@atu.ie 
+------------------------
+Ewa Bender 
+
+S00273126@atu.ie 
+------------------------
+Jack Donaghy 
+
+S00268126@atu.ie 
+------------------------
+
+Links to:   
+
+Trello Page  
+
+https://trello.com/invite/b/67a4cd86390df9d4f430ea15/ATTIc86e8a93084d9e1388b6c4981db6d29316510C2E/student-help-buddy 
+
+GitHub Team Page  
+
+max-comp/student-help-buddy 
+
+ 
+
+Links to any data gathered or data analysis planned  
+
+https://www.researchgate.net/publication/368301459_Student_Attention_and_Distraction_in_Community_College 
+
+https://www.researchgate.net/publication/387697885_THE_IMPACT_OF_TIKTOK'S_FAST-PACED_CONTENT_ON_ATTENTION_SPAN_OF_STUDENTS 
+
+https://www.researchgate.net/publication/388708713_The_role_of_self-regulated_learning_in_modelling_the_relationships_between_learning_approaches_FoMO_and_smartphone_addiction_among_university_students 
+
+https://www.tandfonline.com/doi/full/10.1080/2331186X.2024.2425205#d1e181 
+
+https://www.researchgate.net/publication/378436816_Teaching_Students_How_to_Study 
+
+https://files.eric.ed.gov/fulltext/EJ1097402.pdf 
+
+ 
+
+ 
+
+Problem to be solved 
+
+The project aims to tackle poor time management among students,
+which often leads to procrastination, missed deadlines, and stress.
+The solution will help students manage their time effectively by providing tools
+like timers and checklists that keep them on track. 
+
+  
+
+Summary of the Project solution 
+
+The "Student Help Buddy" project offers a comprehensive time management tool that includes features
+such as a student timer, a checklist, and toggle switches for student activities. This solution allows
+students to visually and interactively manage their tasks, ensuring that they stay focused and productive. 
+
+  
+
+List of Project Requirements   
+
+Student Timer: Interaction, screen, buzzer for notifications.  
+
+Checklist: Interaction and screen for visualizing tasks.  
+
+Student Toggle: LED, interaction, screen, and on/off switch to enable or disable tasks.  
+
+Other Equipment: On/off switch for the overall system. 
+
+ 
+
+ 
+
+ 
+
+Initial Design  
+
+ 
+
+ 
+
+ 
+
+Implementation Plan to include equipment needed 
+
+Testing approach – how did you plan your software and hardware
+testing as well as evidence of tests carried out. 
+
+Blynk Cloud has multiple layers of security, it means our network security was already ready
+Every user should have a valid email address.
+Blynk offers a built-in verification process Each device has its own unique OAuth token and Product ID.
+A combination of both these fields grants access to the device only for your organization 
+
+  
+
+Future improvements planned and potential next steps in developing the idea further  
