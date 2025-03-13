@@ -123,3 +123,25 @@ due to the limitation of only being able to access the arduino yúns code
 
 
 Future improvements planned and potential next steps in developing the idea further 
+The next step in Student Help Buddy project is to improve both software and hardware to make final product complete and working without problems.
+
+Software improvements:
+Software part still needs to be fully done, so all functions like timer, checklist and toggle switches will work correctly.
+We plan to make test cases to check that every function is working like expected, so we can find and fix errors and problems if they happen.
+Since we've been working with Wokwi for a while, we can use it for more efficient testing, so we can check code before we put it on real device.
+
+Hardware improvements
+Hardware setup must be finished, so all parts – buttons, LEDs, screen and potentiometer – are installed properly and do not move or break.
+The case will also be improved to make sure everything fits tightly and stays in place, so no parts disconnect or stop working.
+We will check that buttons and switches work many times without problems and do not break if used a lot.
+
+Final testing and making sure everything works
+At the end, we will do full testing of software and hardware together, so we can be sure that everything is working without errors.
+If some problems appear during tests, we will fix them and improve the device.
+The goal is to make Student Help Buddy a fully working and useful tool for students to manage time better.
+
+Expanding IoT functionality
+Since this project is IoT-based, we can connect it to a cloud service like Blynk, Firebase, or AWS IoT to store and analyze student activity.
+Using an API, we can send data about study sessions, completed checklists, and toggle usage to a server for later review.
+This data can be visualized in an app or website, so students can see their study progress over time( feature for the very distant future).
+We could also use AI or data analysis to give students personalized study recommendations based on their habits(feature for the very distant future).
