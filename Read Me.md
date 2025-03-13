@@ -88,9 +88,12 @@ Other Equipment: On/off switch for the overall system.
 
  
 
+
  
 
 Initial Design  
+
+![StudentBuddy concept01](https://github.com/user-attachments/assets/6ea302d8-9d1e-49ea-9c73-642cccb9f1f2)
 
 Implementation Plan to include equipment needed 
 
