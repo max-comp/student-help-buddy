@@ -95,10 +95,19 @@ Initial Design
 
 ![StudentBuddy concept01](https://github.com/user-attachments/assets/6ea302d8-9d1e-49ea-9c73-642cccb9f1f2)
 
-Implementation Plan to include equipment needed 
+Testing approach – how did you plan your software and hardwaretesting as well as evidence of tests carried out. 
 
-Testing approach – how did you plan your software and hardware
-testing as well as evidence of tests carried out. 
+Testing software--
+We sadly couldn't efficiently test the software due to only finding the correct LCD screen type on a virtual service called wokwi later on
+
+Thankfully as this project continues we can get more adept at it and use all it's functionalities
+
+Testing hardware--
+Testing hardware was also inefficient due to only having access to the arduino yuns during class times
+
+It was still very possible and during these times I was able to measure and 3D print the casing and assemble the parts during class to test it out 👍
+
+Security measures--
 
 Blynk Cloud has multiple layers of security, it means our network security was already
 protected sufficiently on the network side.
