@@ -88,14 +88,26 @@ Other Equipment: On/off switch for the overall system.
 
  
 
+
  
 
 Initial Design  
 
-Implementation Plan to include equipment needed 
+![StudentBuddy concept01](https://github.com/user-attachments/assets/6ea302d8-9d1e-49ea-9c73-642cccb9f1f2)
 
-Testing approach – how did you plan your software and hardware
-testing as well as evidence of tests carried out. 
+Testing approach – how did you plan your software and hardwaretesting as well as evidence of tests carried out. 
+
+Testing software--
+We sadly couldn't efficiently test the software due to only finding the correct LCD screen type on a virtual service called wokwi later on
+
+Thankfully as this project continues we can get more adept at it and use all it's functionalities
+
+Testing hardware--
+Testing hardware was also inefficient due to only having access to the arduino yuns during class times
+
+It was still very possible and during these times I was able to measure and 3D print the casing and assemble the parts during class to test it out 👍
+
+Security measures--
 
 Blynk Cloud has multiple layers of security, it means our network security was already
 protected sufficiently on the network side.
@@ -111,3 +123,25 @@ due to the limitation of only being able to access the arduino yúns code
 
 
 Future improvements planned and potential next steps in developing the idea further 
+The next step in Student Help Buddy project is to improve both software and hardware to make final product complete and working without problems.
+
+Software improvements:
+Software part still needs to be fully done, so all functions like timer, checklist and toggle switches will work correctly.
+We plan to make test cases to check that every function is working like expected, so we can find and fix errors and problems if they happen.
+Since we've been working with Wokwi for a while, we can use it for more efficient testing, so we can check code before we put it on real device.
+
+Hardware improvements
+Hardware setup must be finished, so all parts – buttons, LEDs, screen and potentiometer – are installed properly and do not move or break.
+The case will also be improved to make sure everything fits tightly and stays in place, so no parts disconnect or stop working.
+We will check that buttons and switches work many times without problems and do not break if used a lot.
+
+Final testing and making sure everything works
+At the end, we will do full testing of software and hardware together, so we can be sure that everything is working without errors.
+If some problems appear during tests, we will fix them and improve the device.
+The goal is to make Student Help Buddy a fully working and useful tool for students to manage time better.
+
+Expanding IoT functionality
+Since this project is IoT-based, we can connect it to a cloud service like Blynk, Firebase, or AWS IoT to store and analyze student activity.
+Using an API, we can send data about study sessions, completed checklists, and toggle usage to a server for later review.
+This data can be visualized in an app or website, so students can see their study progress over time( feature for the very distant future).
+We could also use AI or data analysis to give students personalized study recommendations based on their habits(feature for the very distant future).
