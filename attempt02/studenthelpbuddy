@@ -149,6 +149,7 @@ void handleSelectPress() {
       selectedOption = 0; // Reset selection for new menu
       break;
 }
+}
 
 void handleBackPress() {
   digitalWrite(ALERT_LED, HIGH);
