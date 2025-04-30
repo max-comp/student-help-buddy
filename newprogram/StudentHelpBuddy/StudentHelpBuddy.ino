@@ -1,25 +1,27 @@
 #include <LiquidCrystal.h>
 
 // Include necessary libraries
-#include <LiquidCrystal_I2C.h>  // For LCD display
 #include <EEPROM.h>             // For saving settings
 #include <Bounce2.h>            // For button debouncing
 #include <Bridge.h>             // For Arduino Yún network communication
 #include <HttpClient.h>         // For making HTTP requests
+#include "rgb_lcd.h"
+
+rgb_lcd lcd;
 
 // Pushingbox configuration
 #define PUSHINGBOX_API  "api.pushingbox.com"
 #define DEVICEID        "vDEVICEID"  // Replace with your actual DeviceID from Pushingbox
 
 // Pin definitions
-#define BUTTON_NEXT     2
-#define BUTTON_SELECT   3
-#define BUTTON_BACK     4
-#define BUZZER_PIN      5
-#define LED_PIN         6
-#define TOGGLE_SWITCH   7
-#define SYSTEM_SWITCH   8       // Overall system on/off switch
-#define ERROR_LED_PIN   13
+#define BUTTON_NEXT     8
+#define BUTTON_SELECT   8
+#define BUTTON_BACK     9
+#define BUZZER_PIN      0
+#define LED_PIN         5
+#define TOGGLE_SWITCH   6
+#define SYSTEM_SWITCH   7       // Overall system on/off switch
+#define ERROR_LED_PIN   4
 #define POWER_SAVE_TIMEOUT 300000  // 5 minutes in milliseconds
 
 // Button debouncing
@@ -30,7 +32,7 @@ Bounce toggleSwitch = Bounce();
 Bounce systemSwitch = Bounce();
 
 // Global objects
-LiquidCrystal_I2C lcd(0x27, 16, 2);  // Standard I2C address, adjust if needed
+lcd.begin(16,2)  // Standard I2C address, adjust if needed
 HttpClient client;                   // HTTP client for Pushingbox requests
 
 // Navigation and Settings structure
@@ -335,7 +337,7 @@ class StudentTimer {
       url += durationMinutes;
       
       // Make HTTP request
-      sendHttpRequest(url);
+      //sendHttpRequest(url);
     }
     
   public:
@@ -460,7 +462,7 @@ class ChecklistManager {
       url += completed ? "completed" : "pending";
       
       // Make HTTP request
-      sendHttpRequest(url);
+      //sendHttpRequest(url);
       
       // Mark as logged
       lists[currentList].items[taskIndex].dataLogged = true;
@@ -625,7 +627,7 @@ class ChecklistManager {
     }
 };
 
-class ToggleManager {
+class ToggleManagerClass {
   private:
     ToggleTask tasks[MAX_TOGGLES];
     uint8_t currentTask;
@@ -655,14 +657,14 @@ class ToggleManager {
       url += tasks[taskIndex].enabled ? "enabled" : "disabled";
       
       // Make HTTP request
-      sendHttpRequest(url);
+      //sendHttpRequest(url);
       
       // Mark as logged
       tasks[taskIndex].statusLogged = true;
     }
     
   public:
-    ToggleManager() {
+    ToggleManagerClass() {
       currentTask = 0;
       
       // Initialize default toggle tasks
@@ -767,52 +769,52 @@ bool isInPowerSave = false;
 bool systemEnabled = true;
 
 // Function to send HTTP requests to Pushingbox
-void sendHttpRequest(String url) {
+//void sendHttpRequest(String url) {
   // Create a client connection
-  client.get(PUSHINGBOX_API, url);
+  //client.get(PUSHINGBOX_API, url);
   
   // Get the response status
-  int statusCode = client.responseStatusCode();
+  //int statusCode = client.responseStatusCode();
   
   // Check if request was successful
-  if (statusCode != 200) {
-    handleError("Data sync failed");
-  }
+  //if (statusCode != 200) {
+  //  handleError("Data sync failed");
+  //}
   
   // Read the response
-  client.skipResponseHeaders();
+  //client.skipResponseHeaders();
   
   // Clean up
-  client.stop();
-}
+  //client.stop();
+//}
 
 // Function to sync all data to Google Sheets
-void syncAllData() {
-  if (!currentSettings.dataSyncEnabled) {
-    lcd.clear();
-    lcd.print("Data Sync");
-    lcd.setCursor(0, 1);
-    lcd.print("Sync is disabled");
-    delay(2000);
-    return;
-  }
+// void syncAllData() {
+//   if (!currentSettings.dataSyncEnabled) {
+//     lcd.clear();
+//     lcd.print("Data Sync");
+//     lcd.setCursor(0, 1);
+//     lcd.print("Sync is disabled");
+//     delay(2000);
+//     return;
+//   }
   
-  lcd.clear();
-  lcd.print("Data Sync");
-  lcd.setCursor(0, 1);
-  lcd.print("Syncing...");
+//   lcd.clear();
+//   lcd.print("Data Sync");
+//   lcd.setCursor(0, 1);
+//   lcd.print("Syncing...");
   
-  // Sync all data
-  checklistManager.syncAllChecklists();
-  toggleManager.syncAllToggles();
+//   // Sync all data
+//   checklistManager.syncAllChecklists();
+//   toggleManagerClass.syncAllToggles();
   
-  // Show success message
-  lcd.clear();
-  lcd.print("Data Sync");
-  lcd.setCursor(0, 1);
-  lcd.print("Sync completed");
-  delay(2000);
-}
+//   // Show success message
+//   lcd.clear();
+//   lcd.print("Data Sync");
+//   lcd.setCursor(0, 1);
+//   lcd.print("Sync completed");
+//   delay(2000);
+// }
 
 void setupHardware() {
   // Initialize buttons with debouncing
@@ -989,7 +991,7 @@ void loop() {
       break;
       
     case TOGGLE_MENU:
-      toggleManager.update(navigation);
+      //toggleManagerClass.update(navigation);
       break;
       
     case SETTINGS_MENU:
@@ -1014,7 +1016,7 @@ void loop() {
       
     case SYNC_MENU:
       // Start data sync
-      syncAllData();
+      //syncAllData();
       navigation.setMenuState(MAIN_MENU);
       break;
       
