@@ -47,6 +47,22 @@ int selectedOption = 0;
 const char* mainMenuOptions[] = {"Settings", "Toggle", "To Do", "Timer"};
 const int mainMenuSize = 4; // Now 4 options
 
+void updateEncoder();
+
+void updateEncoder() {
+  static int lastEncoded = 0;
+  int MSB = digitalRead(ENCODER);  // CLK pin
+  int LSB = digitalRead(2);        // DT pin (assuming connected to D2)
+
+  int encoded = (MSB << 1) | LSB;
+  int sum = (lastEncoded << 2) | encoded;
+
+  if (sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011) encoderCount++;
+  if (sum == 0b1110 || sum == 0b0111 || sum == 0b0001 || sum == 0b1000) encoderCount--;
+
+  lastEncoded = encoded;
+}
+
 void setup() {
   Serial.begin(9600);
   
@@ -69,7 +85,11 @@ void setup() {
   digitalWrite(TOGGLE_LED, LOW);
   pinMode(ALERT_LED, OUTPUT);
   digitalWrite(ALERT_LED, LOW);
+
+ pinMode(ENCODER, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(ENCODER), updateEncoder, CHANGE);
 }
+
 
 void loop() {
   checkAllInputs();
@@ -188,19 +208,19 @@ void updateButtonDisplay() {
 
 // Updated Encoder Handler Functions
 void handleEncoderEvents() {
-  if (encoderCount != 0) {
-    int change = encoderCount;
+   if (encoderCount != 0) {
+    int change = encoderCount > 0 ? 1 : -1; // Only track direction
     encoderCount = 0;
-    
-    if (change > 0) {
-      Serial.println("Encoder CW");
-      lastButtonPressed = "Encoder+";
-    } else {
-      Serial.println("Encoder CCW");
-      lastButtonPressed = "Encoder-";
+
+    // Update selection based on current menu
+    switch(currentMenu) {
+      case MAIN_MENU:
+        selectedOption = constrain(selectedOption + change, 0, mainMenuSize-1);
+        break;
+      // Add other menu cases later
     }
-    
-    // Update LCD display if screen is on
+
+    // Update display
     if (debouncerOn.read() == LOW) {
       lcd.setCursor(13, 1);
       lcd.print(change > 0 ? "+" : "-");
